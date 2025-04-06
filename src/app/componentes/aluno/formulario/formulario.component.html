@@ -1,0 +1,24 @@
+<app-menu-bar/>
+
+<h2>Adicionar Aluno</h2>
+<form (ngSubmit)="adicionarAluno()">
+  <div class="formAdd">
+    <div class="input-container">
+      <label for="nome"><strong>Nome: </strong></label>
+      <input id="nome" type="text" pInputText [(ngModel)]="nome" name="nome" required />
+
+      <label for="descricao"><strong>Matricula: </strong></label>
+      <input id="descricao" type="text" pInputText [(ngModel)]="matricula" name="descricao" required />
+
+      <label for="valor"><strong>Idade: </strong></label>
+      <input id="valor" type="text" pInputText [(ngModel)]="idade" name="valor" pattern="[0-9]*"
+             (input)="apenasNumeros($event)" required />
+    </div>
+  </div>
+  <button type="submit" pButton label="Adicionar Aluno"></button>
+</form>
+
+<div *ngIf="mensagem" [ngClass]="tipoMensagem === 'erro' ? 'mensagem-erro' : 'mensagem-sucesso'">
+  {{ mensagem }}
+</div>
+

@@ -1,0 +1,36 @@
+<app-formulario/>
+
+<div class="header">
+  <h2>Alunos</h2>
+</div>
+
+<div *ngIf="alunos.length === 0" class="alert alert-info">
+  Nenhum aluno cadastrado.
+</div>
+
+<ul *ngIf="alunos.length > 0">
+  <li *ngFor="let aluno of alunos">
+    {{ aluno.nome }}
+    {{ aluno.matricula }}
+    {{ aluno.idade }}
+  </li>
+</ul>
+
+<!-- Tabela com estilização do PrimeNg
+<p-table [value]="alunos" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nome</th>
+      <th>Matrícula</th>
+      <th>Idade</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-aluno>
+    <tr>
+      <td>{{ aluno.nome }}</td>
+      <td>{{ aluno.matricula }}</td>
+      <td>{{ aluno.idade }}</td>
+    </tr>
+  </ng-template>
+</p-table>
+-->
