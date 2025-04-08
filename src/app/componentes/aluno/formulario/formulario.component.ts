@@ -14,8 +14,7 @@ import { AlunoService } from '../../../services/aluno.service';
     CommonModule,
     ReactiveFormsModule,
     InputTextModule,
-    ButtonModule,
-    MenuBarComponent
+    ButtonModule
   ],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'

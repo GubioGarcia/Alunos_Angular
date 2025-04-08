@@ -24,9 +24,14 @@ export class MenuBarComponent {
   ngOnInit() {
     this.items = [
         {
-            label: 'Alunos',
+            label: 'Cadastrar Aluno',
             icon: 'pi pi-user',
             routerLink: ['/formulario']
+        },
+        {
+          label: 'Listar Alunos',
+          icon: 'pi pi-user',
+          routerLink: ['/lista']
         },
         {
           label: 'Informações do projeo',

@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Aluno } from '../models/Aluno';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlunoService {
-  constructor() { }
+  private alunos: Aluno[] = [];
 
-  private alunosSubject = new BehaviorSubject<Aluno[]>([]);
-  alunos$ = this.alunosSubject.asObservable();
+  constructor() {}
 
-  adicionarAluno(aluno: Aluno) {
-    const listaAtual = this.alunosSubject.getValue();
-    this.alunosSubject.next([...listaAtual, aluno]);
+  getAlunos(): Aluno[] {
+    return [...this.alunos];
   }
 
-  limparAlunos() {
-    this.alunosSubject.next([]);
+  adicionarAluno(aluno: Aluno): void {
+    this.alunos.push(aluno);
+  }
+
+  limparAlunos(): void {
+    this.alunos = [];
   }
 }

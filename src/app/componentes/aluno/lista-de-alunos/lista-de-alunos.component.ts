@@ -9,8 +9,7 @@ import { Aluno } from '../../../models/Aluno';
   selector: 'app-lista-de-alunos',
   imports: [
     CommonModule,
-    TableModule,
-    FormularioComponent
+    TableModule
   ],
   templateUrl: './lista-de-alunos.component.html',
   styleUrl: './lista-de-alunos.component.css'
@@ -23,8 +22,6 @@ export class ListaDeAlunosComponent {
   ) {}
 
   ngOnInit() {
-    this.alunoService.alunos$.subscribe(alunos => {
-      this.alunos = alunos;
-    });
+    this.alunos = this.alunoService.getAlunos();
   }
 }
